@@ -12,7 +12,12 @@ tabela_iof = {
     21: 30, 22: 26, 23: 23, 24: 20, 25: 16,
     26: 13, 27: 10, 28: 6, 29: 3, 30: 0
 }
-iof = tabela_iof.get(tempo_investimento, 0)
+
+if 1 <= tempo_investimento <= 30:
+    iof = tabela_iof[tempo_investimento]
+else:
+    iof = 0
+    
 valor_iof = rendimento_bruto * (iof / 100)
 apos_iof = rendimento_bruto - valor_iof
 
